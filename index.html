@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!-----this is for adding icons in html-->
+    <script src="https://kit.fontawesome.com/dbc2580aa4.js" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.11/typed.js"></script>
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="header">
+        <div class="container">
+            
+            <nav>
+                <img src="images/ppp.jpeg" class="logo">
+                <!--in href we give id of html page section 
+                    so when we click it jump on that section directly-->
+                <ul class="sideMenu" id="sideM">
+                    <li><a href="#header">Home</a></li> 
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#portfolio">Projects</a></li>
+                    <li><a href="#contact">Contact</a></li>
+
+                    <i class="fa-solid fa-xmark" onclick="closeMenu()"></i> <!--this hide when screen is big..
+                                                      this is visible when size < 600px -->
+                </ul>
+                <i class="fa-solid fa-bars" onclick="openMenu()"></i>  <!--this hide when screen is big... And
+                                                    this is visible when size < 600px -->
+            </nav> 
+        </div>
+
+        <div class="headerText">
+            <h1>Hello it's Me <br><span>Rushikesh khiste</span><br>And I'm a <span class="typing"></span></h1>
+        </div>
+    </div>
+
+    <!-------------ABOUT ME---------------------->
+
+    <div id="about">
+        <div class="container">
+            <div class="row">
+                <div id="aboutMeCol1">
+                    <img src="images/about.jpeg" >
+                </div>
+                <div id="aboutMeCol2">
+                    <h1 class="subTitle">About Me</h1>
+                    <p><span>Hello I'm Rushikesh Khiste<br></span>
+                        Currently pursuing my third semester of MCA at NITW. 
+                        With a profound interest in programming and problem-solving, 
+                        I have honed my skills to handle intricate challenges effortlessly. 
+                         
+                        I am eager to collaborate with like-minded individuals 
+                        and professionals in the Software Developement community. 
+                        If you share a similar passion for Software Developement or 
+                        seek to collaborate on exciting projects, let's connect! </p>
+                    
+                    <div class="title">
+                        <p class="link currentLink" onclick="showContent('Skills')">Technical Skills</p>
+                        <p class="link" onclick="showContent('Projects')">Projects</p>
+                        <p class="link" onclick="showContent('Academics')">Soft Skills</p>
+                    </div>
+
+                    <div class="content currentContent" id="Skills">
+                        <ul>
+                            <li><span>Languages:</span><br> C, C++, Java </li>
+                            <li><span>Web Technologies/ Frameworks:</span><br> HTML, CSS , JavaScript, React.</li>
+                            <li><span>Databases:</span><br> Oracle, Mysql, MongoDB.</li>
+                            <li><span>Developer Tools:</span><br> Git, GitHub</li>
+                        </ul>
+                    </div>
+
+                    <div class="content" id="Projects">
+                        <ul>
+                            <li><span>Online Book Store: </span><br>Online Book Store Project is a Web-Based Online e-book Shopping Project.</li>
+                            <li><span>Cricket Score: </span><br>Developed a Cricket Score project that uses all C++ Object Oriented Programming Concepts .</li>
+                            <li><span>Netflix Home Page: </span><br>Create Home Page Clone of Netflix.</li>
+                        </ul>
+                    </div>
+
+                    <div class="content" id="Academics">
+                        <ul>
+                            <li><span> Problem solving:</span><br>Strong analytical skills with the ability to solve problems creatively</li>
+                            <li><span>communication skills: </span><br> Strong communication skills and
+                                drive to work collaboratively</li>
+                            <li><span> enthusiasm:</span><br> Self motivated and enthusiasm to learn new technologies.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+<!----------------------projects--------------->
+
+<div id="portfolio">
+    <div class="container">
+        <h1>My Projects</h1>
+        <div class="workList">
+            <div class="work">
+                <img src="images/work-1.png" >
+                <div class="layer">
+                    <h3>College Website</h3>
+                    <p>College Website created using HTML,CSS,JavaScript.</p>
+                    <a href="https://rushikeshkhistecollege.netlify.app/"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                </div>
+            </div>
+            <div class="work">
+                <img src="images/work-2.png" >
+                <div class="layer">
+                    <h3>Netflix Clone</h3>
+                    <p>Netflix Clone created using HTML,CSS,JavaScript And PHP.</p>
+                    <a href="https://rushikeshkhistenetflix.netlify.app/"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                </div>
+            </div>
+            <div class="work">
+                <img src="images/work-3.png" >
+                <div class="layer">
+                    <h3>Cricket Score</h3>
+                    <p>Developed a Cricket Score project that uses all C++ Object Oriented Programming Concepts .</p>
+                    <a href="#"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                </div>
+            </div>
+        </div>
+        <!-- <div class="workList">
+            <div class="work">
+                <img src="images/work-1.png" >
+                <div class="layer">
+                    <h3>College Website</h3>
+                    <p>College Website created using HTML,CSS,JavaScript.</p>
+                    <a href="https://rushikeshkhistecollege.netlify.app/"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                </div>
+            </div>
+            <div class="work">
+                <img src="images/work-2.png" >
+                <div class="layer">
+                    <h3>Netflix Clone</h3>
+                    <p>Netflix Clone created using HTML,CSS,JavaScript And PHP.</p>
+                    <a href="https://rushikeshkhistenetflix.netlify.app/"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                </div>
+            </div>
+            <div class="work">
+                <img src="images/work-3.png" >
+                <div class="layer">
+                    <h3>Amazon Clone</h3>
+                    <p>Amazon Clone created using HTML,CSS.</p>
+                    <a href="https://rushikeshkhisteamazon.netlify.app/"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                </div>
+            </div>
+        </div> -->
+    </div>
+    
+</div>
+
+<!----------------------Services--------------->
+
+<div id="services">
+    <div class="container">
+        <h1>My Services</h1>
+        <div class="serviceList">
+            <div>
+                <i class="fa-solid fa-code"></i>
+                <h2>Front-End Development</h2>
+                <p> As a front-end developer, I specialize in front-end development, creating engaging and user-friendly interfaces that leave a lasting impression.</p>
+                <br>
+                <p>I transform design concepts into responsive and interactive web applications using HTML, CSS, and JavaScript.</p>
+            </div>
+            <div>
+                <i class="fa-solid fa-crop"></i>
+                <h2>Back-End Development</h2>
+                <p>As a back-end developer, I specialize in creating the server-side components that power web applications.  </p>
+                <br>
+                <p>My expertise lies in architecting, developing, and optimizing the behind-the-scenes systems that ensure your applications run smoothly and efficiently. </p>
+            </div>
+            <div>
+                <i class="fa-brands fa-app-store"></i>
+                <h2>Software Development</h2>
+                <p>I create tailored software solutions to meet specific needs, using modern technologies and languages </p>
+                <br>
+                <p>I design and develop responsive web applications that are user-friendly and secure.</p>
+            </div>
+        </div>
+    </div>
+</div>
+<!------------------------------ Contact ------------------------------->
+
+<div id="contact">
+
+    <div class="container">
+        <div class="row">
+            <div class="contactCol1">
+                <h1>Contact Me</h1>
+                <p> <i class="fa-solid fa-paper-plane"></i> kr22mcf1r45@student.nitw.ac.in</p>
+                <p> <i class="fa-solid fa-paper-plane"></i> rushinit07@gmail.com</p>
+                <p> <i class="fa-solid fa-square-phone"></i> 8830737947</p>
+                <div class="socialMedia">
+                    <a href="https://instagram.com/__rushi__0707?igshid=OGQ5ZDc2ODk2ZA%3D%3D&utm_source=qr"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="https://www.linkedin.com/in/rushikeshkhiste07?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app"><i class="fa-brands fa-linkedin"></i></a>
+                    <a href="https://github.com/rushi0707"><i class="fa-brands fa-github"></i></a>
+
+                </div>
+                <a href="resume_oct.pdf" download class="btn btn2">Download CV</a>
+            </div>
+
+            <div class="contactCol2">
+                <form name="submit-to-google-sheet">
+                    <input type="text" name="Name" placeholder="Your Name" required>
+                    <input type="text" name="Email" placeholder="Your Mail" required>
+                    <textarea name="msg" rows="6" placeholder="Your Message"></textarea>
+                    <button type="submit" class="btn btn2">Submit</button>
+                </form>
+                <span id="msg"></span>
+            </div>
+        </div>
+    </div>
+
+    <!---------------------footer------------------------>
+
+    <div class="copyright">
+        <p>Made with  <i class="fa-solid fa-heart"></i>  by Rushikesh</p>
+    </div>
+</div>
+
+<script src="script.js"></script>  <!-- JS for chnging text    -->
+<script src="navBar.js"></script>  <!-- JS for nav bar menu   --> 
+<script src="about.js"></script>  <!-- JS for changing text in about section   -->
+<script src="contact.js"></script>  <!-- JS for store contact form details   -->
+
+<!-- JS for contact form   -->
+<script>
+  const scriptURL = 'https://script.google.com/macros/s/AKfycbzqBLHs8oLUgq2XGWyyaHIqjm7p1KQvpm_mitaRrLCuMMJPIU5HelaEhtSpd5HQUVPo/exec'
+  const form = document.forms['submit-to-google-sheet']
+  const msg=document.getElementById("msg");
+
+  form.addEventListener('submit', e => {
+    e.preventDefault()
+    fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+      .then(response => msg.innerHTML = "Message send successfully")
+      setTimeout(function()
+                {
+                    msg.innerHTML="";
+                },1000)
+                form.reset();
+  })
+</script>
+
+</body>
+</html>

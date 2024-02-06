@@ -1,0 +1,639 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Ubuntu:wght@400;500;700&display=swap');
+
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body
+{
+    background-color: black;
+    color:white;
+}
+
+html 
+{
+    scroll-behavior: smooth;  /*The scroll-behavior property specifies
+     whether to smoothly animate the scroll position, instead of
+    a straight jump, when the user clicks on a link within a scrollable box.*/
+}
+
+#header
+{
+    height:100%;  /* % means relative to parent size so here we give 100% of parent*/
+    width:100vw;
+    background-image: url("images/dd.jpg");
+    background-size: cover;
+    background-position: center;
+
+}
+.container
+{
+    padding:  10px 10%;   /*padding is VVIMP otherwise elements go out of screen*/
+                        /* 10px up and down  AND 10% right and left */
+}
+
+.logo
+{
+    width:140px;
+}
+
+nav    /*it contain logo and dropdown list*/
+{
+    display: flex;                   
+    justify-content: space-between;  /* we want space bet logo and drop down so give space 
+                                     bet karan doghana eka eka side la takun madhe space*/
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+nav ul li
+{
+    display: inline-block;  /*for list we use display: inline and for div display:flex*/
+    margin: 10px 20px;      /* give space bte each list item */
+    list-style: none;       /* to remove dots from list elements */
+}
+
+nav ul li a  /*nav madhe ul madhe li madhe a cha properties change karayla*/
+{
+    color: rgb(248, 248, 248);
+    text-decoration: none;   /*to remove underline*/
+    font-size: 20px;
+    position: relative;
+}
+
+nav ul li a::after /* for add line after every list item */
+{                       /*https://www.w3schools.com/cssref/sel_after.php*/
+
+    content:'';             /* what insert ( text) after every list item */
+    background: rgb(235, 42, 42);
+    width:0;             /* initially we set width as 0px then make it 100% after hover */
+    height: 3px;
+    position:absolute;  /*absolute to parent i.e. anchor tag*/
+    bottom:-6px;
+    left:0;
+    transition: all 0.5s ;   /* look notes for details */
+}
+
+nav ul li a:hover::after
+{
+    width:100%;   
+}
+
+.headerText 
+{
+    color: white;
+    margin-top: 15%;
+    margin-left: 10%;
+    font-size: 30px;
+}
+
+.headerText h1
+{
+    font-size: 60px;
+    margin-top: 20px;
+}
+span 
+{
+    color:rgb(247, 51, 51);
+}
+
+/*-----------ABOUT ME-------------------*/
+
+#about
+{
+    padding: 80px 0px; /*80 from top and bottom AND 0 from left and right*/
+    color: rgb(237, 246, 246);
+}
+
+.row
+{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+#aboutMeCol1
+{
+    flex-basis: 35%;   /* 35% of total container goes to col1 */
+}
+
+#aboutMeCol1 img 
+{
+    width: 100%;
+    border-radius: 15%;
+}
+
+#aboutMeCol2
+{
+    flex-basis: 60%;   /* 60% of total container goes to col2 and 5% space bet them */
+}
+
+#aboutMeCol2 h1
+{
+    margin-bottom: 40px;  
+}
+
+#aboutMeCol2 p
+{
+    font-size: 18px;
+    font-weight: 300;
+    color:#8e8a8a;
+}
+
+#aboutMeCol2 span 
+{
+    color: #ff004f;
+}
+
+.subTitle
+{
+    font-size: 50px;
+    font-weight: 500;
+    color: white;
+}
+
+.title
+{
+    display: flex;
+    margin-top:20px;
+    margin-bottom: 40px;
+}
+
+.title .link p 
+{
+    color: white;
+}
+
+.link
+{
+    margin-right: 50px;
+    font-size: 18px;
+    font-weight: 500;
+    position:relative;
+    cursor: pointer;
+    transition: all;
+    transition-duration: 0.5s;
+}
+
+.link::after
+{
+    content: '';
+    background: red;
+    width: 0;
+    height: 3px;
+    position: absolute;
+    left:0;
+    bottom: -8px;
+    transition: all;
+    transition-duration: 0.5s;
+
+}
+
+.link:hover::after
+{
+    width: 100%;
+}
+
+.content ul li
+{
+    list-style: none;
+    margin: 10px 0px;  /* top/bottom 10px AND left/right 0px */
+}
+
+.content ul li span
+{
+    color: rgb(225, 34, 34);
+    font-size: 14px;
+}
+
+/*---------------handling about me when click on skill,experience------------------*/
+
+.content
+{
+    display: none;    /* initially all content is hide */
+}
+
+.content.currentContent
+{
+    display: block;   /* the link which is currently clicked show its content */
+}
+
+/*-------------------------------services---------------------------*/
+
+#services
+{
+    padding:30px 0px;
+}
+
+#services h1
+{
+    color:rgb(247, 51, 51);
+}
+
+.serviceList
+{
+    display: grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    grid-gap: 40px;
+    margin-top:50px;
+}
+
+.serviceList div 
+{
+    padding: 40px;
+    background: #262626;
+    font-size: 13px;
+    font-weight: 300;
+    border-radius: 10px;
+    transition: all;
+    transition-duration: 0.5;
+    transition-timing-function: ease;
+}
+
+.serviceList div:hover 
+{
+    background: linear-gradient(rgba(217, 165, 165, 0.6),#ff004f); 
+    transform: translateY(-10px);   /* Up for 10px whaen hover */
+}
+
+.serviceList div i 
+{
+    font-size: 50px;
+    margin-bottom: 30px;
+   
+} 
+
+.serviceList div h2
+{
+    font-size: 30px;
+    font-weight: 300;
+    margin-bottom: 15px;
+}
+
+.serviceList div p
+{
+    font-size: 15px;
+}
+
+.serviceList div a
+{
+    color: white;
+    font-size: 13px;
+    display: inline-block;
+    text-decoration: none;
+    margin-top: 20px;
+}
+
+/****************************** work *******************************/
+
+#portfolio
+{
+    padding: 30px 0px;
+}
+
+#portfolio h1
+{
+    color:rgb(247, 51, 51);
+}
+
+.workList
+{
+    display: grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    grid-gap: 40px;
+    margin-top:50px;
+}
+.work
+{
+    border-radius: 10px;
+    overflow: hidden; /* when content in the div is so big and cannot fit into it then it overfolw and go 
+                        out of box so make overflow hidden */
+
+    position: relative;  /* if we given here relative then its child should write POSITION:ABSOLUTE 
+                            if we dont give then properties not apply on childrens eg->look .layer */
+
+    transition: transform 0.5s;
+    
+}
+
+.work img
+{
+    border-radius: 10px;
+    width: 100%;               /* if this line is not there then images goes out of box size */
+    display: block;
+}
+
+.work:hover img 
+{
+    transform: scale(1.2);
+}
+
+.layer
+{
+    width: 100%;
+    height: 0;   /* it will get height when we hover the img */
+    position: absolute;  /* we want this text over the image i.e. over the entire div so make it absolute*/
+    bottom: 0;          /* so that it posoiond according to parent and parent should be position:relative */
+    left:0;             /* so from bottom 0 and left 0 */
+
+    display: flex;          /* this is for center the content over the image */
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    
+    background: linear-gradient(rgba(0,0,0,0.6),#ff004f);  
+    border-radius: 10px;
+    overflow: hidden;
+    padding:0px 40px;
+    font-size: 14px;
+
+    transition:all;
+    transition-duration: 0.5s;
+}
+
+.work:hover .layer
+{
+    height: 100%;  /* when hover over the div then the cntent will show over the image */
+}
+
+.layer h3
+{
+    font-weight: 300;
+    margin-bottom: 30px;
+}
+
+.layer a 
+{
+    margin-top: 20px;
+    font-size: 18px;
+    text-decoration: none;
+    height: 60px;
+    width: 60px;
+    line-height: 60px;
+    border-radius: 50%;
+    background: white;
+    color: #ff004f;
+    text-align: center;
+}
+
+.btn
+{
+    color: white;
+    margin: 50px auto;
+    display: block;
+    width: fit-content;
+    border: 1px solid #ff004f;
+    background: #262626;
+    padding:14px 50px;
+    text-decoration: none;
+    border-radius: 5%;
+    transition: all;
+    transition-duration: 0.5s;
+
+}
+.btn:hover
+{
+    background: #ff004f;
+}
+
+/*************************** CONTACT  ********************************/
+
+#contact
+{
+    padding: 40px 0px;
+}
+
+.contactCol1
+{
+    flex-basis: 35%;
+}
+
+.contactCol2
+{
+    flex-basis: 60%;
+}
+
+.contactCol1 h1
+{
+    font-size: 30px;
+    
+}
+
+.contactCol1 p
+{
+    margin-top: 30px;
+    
+}
+.contactCol1 p i
+{
+    margin-right: 15px;
+    font-size: 25px;
+    color: #ff004f;
+}
+
+.socialMedia
+{
+    margin-top: 30px;
+}
+
+.socialMedia a
+{
+    margin-right: 15px;
+    text-decoration: none;
+    color: #5c5959;
+    font-size: 30px;
+    
+    display: inline-block;
+
+    transition: all;
+    transition-duration: 0.5s;
+    
+}
+.socialMedia a:hover
+{
+    color: #ff004f;
+    transform: translateY(-5px);
+}
+
+.btn2
+{
+    display: inline-block;
+    background-color: #ff004f;
+    font-size: 18px;
+    font-weight: 100;
+}
+
+.contactCol2 form
+{
+    width: 100%;
+    
+}
+
+.contactCol2 form input
+{
+    width: 100%;
+    padding: 15px;
+    margin: 15px 0px;
+    background: #504f4f;
+    color: white;
+    outline: #ff004f;
+    border: 0;
+    outline: none;
+    border-radius: 5px;
+    font-size: 19px;
+}
+
+.contactCol2 form textarea
+{
+    width:100%;
+    padding: 15px;
+    margin: 15px 0px;
+    background: #5c5959;
+    color: white;
+    border: 0;
+    outline: none;
+    border-radius: 5px;
+    font-size: 19px;
+}
+
+form .btn2
+{
+    padding: 14px 60px;
+    font-size: 18px;
+    margin-top: 20px;
+    cursor: pointer;
+}
+
+#msg
+{
+    display: block;
+    margin-top: -40px;
+    color: rgb(221, 80, 80);
+}
+
+
+
+/********************** footer **********************/
+
+.copyright
+{
+    margin-top: 20px;
+    width: 100%;
+    text-align: center;
+    font-weight: 300;
+    padding: 25px 0;
+    
+
+}
+
+.copyright i
+{
+    color: #ff004f;
+   
+}
+
+/*************************** Make it responsive ****************************/
+/* 1. for nav bar and background */
+
+nav .fa-solid  /* fa-solid is class of cross/menu icon in nav bar initially it is hidden*/
+{
+    display: none;   
+}
+
+@media only screen and (max-width:600px) 
+{
+    #header
+    {
+        background-image: url(images/dp.jpeg);  /*change backround when size<600px*/
+    } 
+    
+    .headerText 
+    {
+        margin-top: 100%;
+        font-size: 16px;
+    }
+
+    .headerText h1 
+    {
+        font-size: 30px;
+    }
+
+    nav .fa-solid  /* fa-solid is class of cross/menu icon in nav bar initially it is hidden*/
+    {
+        display: block;
+        font-size: 25px;   
+    }   
+    
+    nav ul 
+    {
+        position: absolute;
+        background-color: #f12264;
+        top: 0;
+        right: -300px;  /* -200 means out of screen */
+        height:80vh;  /* 100vh means full screen */
+        width: 200px;
+        padding-top: 50px;
+        display: none;          /*VVVVIMP*/
+        /*
+            here we give display:none because
+            when our screen size is less than 600 then we create new nav bar
+            but problem is when we look into moile it came with that -300 size also
+            so that red navbar also get displayed to solve this problem
+            we make display none so that that element gets hide
+            and in nav.js when click on button it get displayed
+        */
+        transition: right 0.5s;
+    }
+
+    nav ul li 
+    {
+        display: block;
+        margin: 25px;
+    }
+
+    nav ul .fa-solid /* fa-solid is class of cross/menu icon in nav bar initially it is hidden*/
+    {
+        position: absolute;
+        top:25px;
+        left:25px;
+        cursor:pointer;
+    }
+
+    /** 2. for about me section when size < 600px **/
+
+    .subTitle
+    {
+        font-size: 40px;
+    }
+
+    .aboutMeCol1
+    {
+        flex-basis: 100%;
+        margin-bottom: 30px;
+    }
+    .aboutMeCol2
+    {
+        flex-basis: 100%;
+        font-size: 14px;
+    }
+
+    .subTitle
+    {
+        font-size: 40px;   
+    }
+
+    .link
+    {
+        font-size: 16px;
+        margin-right: 20px;
+    }
+
+}
+
+
+
